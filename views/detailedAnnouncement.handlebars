@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+<style>
+td
+{
+	padding-top:10px;
+}
+
+</style>
+<meta charset="utf-8">
+
+</head>
+
+<body>
+<font face="Roboto">
+<div style="padding-right:3%;padding-left:3%;margin-top:5%">
+<div align="center"><font color="#3f8acd" size="6"><span id = 'title'></span></font>
+<br>
+
+</div>
+<br>
+<div align="right" style="color:#2f5597; size:auto" ><b><span id = 'datePublished'></span></b></div>
+<font size="3">
+<p align="left" id='description' style="line-height: 200%;">
+</p>
+</div>
+</font>
+
+</div>
+</font>
+</body>
+<script>
+
+
+var sortedTitle = localStorage.getItem("sortedTitle")
+var sortedDescription =localStorage.getItem("sortedDescription")
+var sortedDateOfPublish =localStorage.getItem("sortedDateOfPublish")
+var sortedFullName =localStorage.getItem("sortedFullName")
+ document.getElementById("title").innerHTML = sortedTitle;
+ document.getElementById("description").innerHTML = sortedDescription;
+ document.getElementById("datePublished").innerHTML = sortedDateOfPublish;
+</script>
+</html>

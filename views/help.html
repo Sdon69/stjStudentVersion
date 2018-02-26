@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Home2</title>
+
+  <script type="text/javascript" src="../views/k2.js"></script>
+
+
+
+
+
+
+</head>
+<body>
+  {{> header}}
+
+
+  <p>{{screamIt welcomeMessage}}</p>
+  <form name="cal">
+  <input name="text1" type="text" placeholder="enter value here" /><br/>
+  <input name="num1" type="button" value="1" onClick="numberClick(this.value)"/>
+  <input name="num2" type="button" value="2" onClick="numberClick(this.value)"/>
+  <input name="num3" type="button" value="3" onClick="numberClick(this.value)"/>
+  </form>
+
+
+{{> footer}}
+</body>
+
+
+</html>

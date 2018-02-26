@@ -1,0 +1,92 @@
+
+<style>
+
+
+
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#3f8acd;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px #999;
+
+}
+
+.my-float{
+	margin-top:22px;
+}
+</style>
+
+<a href="/editProfile">
+<img src="bluePencil.jpg" class="float"></a>
+<div style="background:#FFFFFF;">
+<div style="padding:5%;" >
+<div style="width:100%;  " id='theDiv'>
+  <font face="Roboto">
+  <table cellspacing="0" cellpadding="0" style="width:100%; ">
+ <div > <tr style="background-color: #e7f0f9; "  ><td style="text-align:left; color:#4489c8;padding:5%;" id='firstNameTitle' >
+ First Name</td><td id = 'firstName'  style="text-align:right;color:#4489c8; font-weight:600;padding:5%;"> </td></tr></div></table>  <table cellspacing="0" cellpadding="0" style="width:100%; ">
+ <div style=" margin-top:10%;"> 	  <tr  style="background-color: #e7f0f9;"><td style="text-align:left;padding:5%;color:#4489c8;">
+    Last Name</td><td id ='lastName' style="text-align:right;color:#4489c8; font-weight:600;padding:5%;"> </td></tr></div></table>
+  <table cellspacing="0" cellpadding="0" style="width:100%; ">
+
+ <div style="margin-top:10%;"> 	  <tr  style="background-color: #e7f0f9;"><td style="text-align:left;padding:5%;color:#4489c8;">
+   User Id</td><td id = 'userId' style="text-align:right;color:#4489c8; font-weight:600;padding:5%;"> </td></tr></div></table><table cellspacing="0" cellpadding="0" style="width:100%; ">
+ <div style=" margin-top:10%;"> 	  <tr  style="background-color: #e7f0f9;"><td style="text-align:left;padding:5%;color:#4489c8;">
+   Class</td><td id = 'className' style="text-align:right;color:#4489c8; font-weight:600;padding:5%;"> </td></tr></div></table>
+  <table cellspacing="0" cellpadding="0" style="width:100%; ">
+
+ <div style=" margin-top:10%;"> 	  <tr  style="background-color: #e7f0f9;"><td style="text-align:left;padding:5%;color:#4489c8;">
+   Section</td><td id = 'section' style="text-align:right;color:#4489c8; font-weight:600;padding:5%;"> </td></tr></div></table>
+<table cellspacing="0" cellpadding="0" style="width:100%; ">
+
+ <div style=" margin-top:10%;"> 	  <tr  style="background-color: #e7f0f9;"><td style="text-align:left;padding:5%;color:#4489c8;">
+   Semester</td><td id = 'semester' style="text-align:right;color:#4489c8; font-weight:600;padding:5%;"> </td></tr></div></table>
+<table cellspacing="0" cellpadding="0" style="width:100%; ">
+
+ <div style=" margin-top:10%;"> 	  <tr  style="background-color: #e7f0f9;"><td style="text-align:left;padding:5%;color:#4489c8;">
+   Email</td><td id = 'email' style="text-align:right;color:#4489c8; font-weight:600;padding:5%;"> </td></tr></div></table>
+<table cellspacing="0" cellpadding="0" style="width:100%; ">
+
+ <div style=" margin-top:10%;"> 	  <tr  style="background-color: #e7f0f9;"><td style="text-align:left;padding:5%;color:#4489c8;">
+   Phone Number</td><td id = 'phoneNo' style="text-align:right;color:#4489c8; font-weight:600;padding:5%;"> </td></tr></div>
+
+  </table>
+</font>
+  </div>
+</div></div>
+
+<script>
+
+var loadedFirstName = localStorage.getItem("firstName");
+var loadedLastName = localStorage.getItem("lastname");
+var loadedUserId = localStorage.getItem("userId");
+var loadedPassword = localStorage.getItem("password");
+var loadedSemester = localStorage.getItem("semester");
+var loadedDepartment = localStorage.getItem("department");
+var loadedClassName = localStorage.getItem("className");
+var loadedSection = localStorage.getItem("section");
+var loadedEmailAddress = localStorage.getItem("emailAddress");
+var loadedPhoneNo = localStorage.getItem("phoneNo");
+
+  document.getElementById("firstName").innerHTML = loadedFirstName;
+  document.getElementById("lastName").innerHTML = loadedLastName;
+  document.getElementById("userId").innerHTML = loadedUserId;
+
+  document.getElementById("semester").innerHTML = loadedSemester;
+
+  document.getElementById("className").innerHTML = loadedClassName;
+  document.getElementById("section").innerHTML = loadedSection;
+  document.getElementById("email").innerHTML = loadedEmailAddress;
+  document.getElementById("phoneNo").innerHTML = loadedPhoneNo;
+
+
+
+
+
+</script>
