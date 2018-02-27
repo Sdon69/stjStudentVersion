@@ -1,3 +1,29 @@
+
+<script>
+var isMobile = {
+    Android: function() {
+		alert('Android');
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+      	alert('Apple');
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
+
+</script>
 <script>
 
   var signedUp = localStorage.getItem("signup");
@@ -33,14 +59,14 @@ if(signedUp == 'true' )
 <div style="position:relative;z-index:1;background-color:#ffffff;width:100%; bottom:0%; height:18vh; overflow:hidden; padding-left:10px; margin:0; ">
   <table style="width:100%;" ><tr>
     <tr>
-    <td style="width:20%; padding-left:5px;"><a onclick="attendanceChange()"  href="attendance" target="search_iframe"><img height=36px width=30px src = "attendance.png" id="attendanceImg"></a> </td>
+    <td style="width:20%; padding-left:5px;"><a onclick="attendanceChange()"  href="attendance.html" target="search_iframe"><img height=36px width=30px src = "attendance.png" id="attendanceImg"></a> </td>
     <td style="width:20%;padding-left:5px;"  ><a onclick="announcementChange()" href="annonuncementViewerPage" target="search_iframe"><img height=30px width=36px src = "announcements.png"  id="annonuncementImg"></a> </td>
     <td style="width:20%;padding-left:5px;"><a onclick="notesChange()" href="notesViewerPage" target="search_iframe"><img height=36px width=28px src = "notes.png" id="notesImg"></a> </td>
     <td style="width:20%;padding-left:2px;"><a onclick="eventChange()" href="eventViewerPage" target="search_iframe"><img height=30px width=40px src = "events.png" id="eventsImg"></a> </td>
     <td style="width:20%;"  ><a href="profile" onclick="profileChange()"  target="search_iframe"><img height=36px width=30px style="margin-left:4px;" src = "profile.png" id="profileImg"></a> </td>
     </tr>
-<td style="width:20%;"><a href="annonuncementViewerPage"  style="text-decoration:none;" target="search_iframe"><span id='attendanceText' style="color:#3f8acd">Atten..</span></a> </td>
-<td style="width:20%;"><a href="notesViewerPage"  style="text-decoration:none;" target="search_iframe"><span id='announcementsText' style="color:#3f8acd">Annou..</span></a> </td>
+<td style="width:20%;"><a href="attendance.html"  style="text-decoration:none;" target="search_iframe"><span id='attendanceText' style="color:#3f8acd">Atten..</span></a> </td>
+<td style="width:20%;"><a href="annonuncementViewerPage"  style="text-decoration:none;" target="search_iframe"><span id='announcementsText' style="color:#3f8acd">Annou..</span></a> </td>
 <td style="width:20%;"><a href="notesViewerPage"  style="text-decoration:none;" target="search_iframe"><span id='notesText' style="color:#3f8acd">Notes</span></a> </td>
 <td style="width:20%;"><a href="eventViewerPage"  style="text-decoration:none;" target="search_iframe"><span id='eventsText' style="color:#3f8acd">Events</span></a> </td>
 <td style="width:20%;"  ><a href="profile"  style="text-decoration:none;" target="search_iframe"><span id='profileText' style="color:#3f8acd">Profile</span></a></td>
