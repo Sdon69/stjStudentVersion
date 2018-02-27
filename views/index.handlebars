@@ -1,28 +1,19 @@
 
 <script>
-var isMobile = {
-    Android: function() {
-		alert('Android');
-        return navigator.userAgent.match(/Android/i);
-    },
-    BlackBerry: function() {
-        return navigator.userAgent.match(/BlackBerry/i);
-    },
-    iOS: function() {
-      	alert('Apple');
-        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-    },
-    Opera: function() {
-        return navigator.userAgent.match(/Opera Mini/i);
-    },
-    Windows: function() {
-        return navigator.userAgent.match(/IEMobile/i);
-    },
-    any: function() {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-    }
-};
-
+if (/webOS|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+alert(navigator.userAgent);
+}else if(/Android/i.test(navigator.userAgent))
+{
+	alert("android");
+}else if(/iPhone|iPad|iPod/i.test(navigator.userAgent))
+{
+	  alert(navigator.userAgent);
+	alert("IOS");
+}
+else {
+  alert(navigator.userAgent);
+  alert('PC');
+}
 </script>
 <script>
 
