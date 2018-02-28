@@ -1,19 +1,13 @@
 
 <script>
-if (/webOS|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-alert(navigator.userAgent);
-}else if(/Android/i.test(navigator.userAgent))
+ if(/iPhone|iPad|iPod/i.test(navigator.userAgent))
 {
-	alert("android");
-}else if(/iPhone|iPad|iPod/i.test(navigator.userAgent))
-{
-	  alert(navigator.userAgent);
+	
 	alert("IOS");
+}else {
+  alert('Not Allowed');
 }
-else {
-  alert(navigator.userAgent);
-  alert('PC');
-}
+
 </script>
 <script>
 
