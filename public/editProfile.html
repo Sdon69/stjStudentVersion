@@ -226,6 +226,8 @@ select:focus ~ .highlight {
 </style>
 <button id="authorize-button" style="display: none;">Authorize</button>
 <button id="signout-button" style="display: none;">Sign Out</button>
+<div id="loadingDiv" style="position:fixed; height:100%; width:100%; background:#80141516; display:block;"><div style="position:fixed; width:20%; top:50%; left:40%; background:#ffffff;"><table ><tr><td><img src="loading.gif"></td><td> Loading...</td></tr></table></div>
+</div>
 <font face="roboto">
 <div style="background:#ffffff; padding:20px;">
 
@@ -821,7 +823,7 @@ var semesterString;
 
 
      function listMisc(mode,rangeRetrieved,sheetIdRetrieved) {
-
+  document.getElementById("loadingDiv").style = "position:fixed; height:100%; width:100%; background:#80141516; display:block;" ;
    var rangeApplied = rangeRetrieved;
    var sheetIdApplied = sheetIdRetrieved;
 
@@ -943,7 +945,7 @@ var semesterString;
 
                   localStorage.setItem("userIdDataString",retrievedUserDetails)
 
-
+                    document.getElementById("loadingDiv").style = "display:none;";
               }
 
 
@@ -978,7 +980,7 @@ var semesterString;
 
 
   function listMajors() {
-
+  document.getElementById("loadingDiv").style = "position:fixed; height:100%; width:100%; background:#80141516; display:block;" ;
 
          loadedFirstName =    localStorage.getItem("transferFirstName")
          loadedLastName =     localStorage.getItem("transferLastName")
@@ -1050,7 +1052,7 @@ function updateInfo(importedUserId,importedPassword,importedFirstName,importedLa
        localStorage.setItem("section", loadedSection);
        localStorage.setItem("emailAddress", loadedEmailAddress);
        localStorage.setItem("phoneNo", loadedPhoneNo);
-      
+           document.getElementById("loadingDiv").style = "display:none;";
        window.top.location.reload();
        var range = response.result;
        if (range.values.length > 0) {

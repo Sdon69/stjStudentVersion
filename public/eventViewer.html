@@ -23,26 +23,28 @@
 
 
 
-    .float{
-    	position:fixed;
-    	width:60px;
-    	height:60px;
-    	bottom:40px;
-    	right:40px;
-    	background-color:#3f8acd;
-    	border-radius:50px;
-    	text-align:center;
-    	box-shadow: 2px 2px 3px #999;
+        .float{
+        	position:fixed;
+        	width:60px;
+        	height:60px;
+        	bottom:100px;
+        	right:40px;
+        	background-color:#3f8acd;
+          	border-radius:50px;
+        	text-align:center;
+        	box-shadow: 2px 2px 3px #999;
 
-    }
+        }
 
     .my-float{
     	margin-top:22px;
     }
-    body{
-	margin:0;
-	padding:0;
+    html, body {height:100%; overflow:hidden}
+body {
+  overflow:auto; -webkit-overflow-scrolling:touch;margin:0;
+padding:0;
 }
+
     </style>
 
     <a href="/eventWriterPage">
@@ -51,13 +53,14 @@
 
         <button id="authorize-button" style="display: none;">Authorize</button>
         <button id="signout-button" style="display: none;">Sign Out</button>
-
+        <div id="loadingDiv" style="position:fixed; height:100%; width:100%; background:#80141516; display:block;"><div style="position:fixed; width:20%; top:50%; left:40%; background:#ffffff;"><table ><tr><td><img src="loading.gif"></td><td> Loading...</td></tr></table></div>
+        </div>
   <!-- Show spreadsheets -->
 <div style="width:100%; background-color:#3f8acd; ">
         <form>
         <table width="100%"><tr><td width="48%"><tr><td>
       <select name ="s1"  id="cataegory1" style="background:#3f8acd; border:none; margin-left:2%;  color:#ECE7E7; width:100%;-webkit-appearance: none; background:url(15xvbd5.png) no-repeat right ;">
-            <option style="font-weight:bold;">Choose Event Genre</option>
+
           <option style="font-weight:bold;">All Events</option>
           <option style="font-weight:bold;">Technology</option>
           <option style="font-weight:bold;">Social Gathering</option>
@@ -377,10 +380,10 @@ document.getElementById("myDiv").innerHTML=transformedHtml;
   function updateSigninStatus(isSignedIn) {
     if (isSignedIn) {
       authorizeButton.style.display = 'none';
-      signoutButton.style.display = 'block';
+      signoutButton.style.display = 'none';
       listMajors();
     } else {
-      authorizeButton.style.display = 'block';
+      authorizeButton.style.display = 'none';
       signoutButton.style.display = 'none';
     }
   }
@@ -418,7 +421,7 @@ document.getElementById("myDiv").innerHTML=transformedHtml;
 
 
   function listMajors() {
-
+    document.getElementById("loadingDiv").style = "position:fixed; height:100%; width:100%; background:#80141516; display:block;" ;
     var itemDetails = [{
            title: 'str1',
            age:   'str2'
@@ -516,8 +519,8 @@ document.getElementById("myDiv").innerHTML=transformedHtml;
 
         localStorage.setItem("viewerData", viewerData);
               saveToViewerData();
-
-
+        document.getElementById("loadingDiv").style = "display:none;";
+          checkInfo()
          } else {
            alert('No data found.');
          }

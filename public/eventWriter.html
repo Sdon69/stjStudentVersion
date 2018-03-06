@@ -221,14 +221,17 @@ textarea:focus ~ .highlight {
 	from { background:#3f8acd; }
   to 	{ width:0; background:transparent; }
 }
-body{
-	margin:0;
-	padding:0;
+html, body {height:100%; overflow:hidden}
+body {
+overflow:auto; -webkit-overflow-scrolling:touch;margin:0;
+padding:0;
 }
 
 </style>
 <button id="authorize-button" style="display: none;">Authorize</button>
 <button id="signout-button" style="display: none;">Sign Out</button>
+<div id="loadingDiv" style="position:fixed; height:100%; width:100%; background:#80141516; display:none;"><div style="position:fixed; width:20%; top:50%; left:40%; background:#ffffff;"><table ><tr><td><img src="loading.gif"></td><td> Loading...</td></tr></table></div>
+</div>
 <font face="roboto">
 <div style="background:#ffffff; padding:20px;">
 
@@ -587,10 +590,10 @@ else{
   function updateSigninStatus(isSignedIn) {
     if (isSignedIn) {
       authorizeButton.style.display = 'none';
-      signoutButton.style.display = 'block';
+      signoutButton.style.display = 'none';
       // listMajors();
     } else {
-      authorizeButton.style.display = 'block';
+      authorizeButton.style.display = 'none';
       signoutButton.style.display = 'none';
     }
   }
@@ -628,7 +631,7 @@ else{
 
 
   function listMajors() {
-
+  document.getElementById("loadingDiv").style = "position:fixed; height:100%; width:100%; background:#80141516; display:block;" ;
     var loadedFirstName = localStorage.getItem("firstName");
     var loadedLastName = localStorage.getItem("lastname");
     var loadedFullName = loadedFirstName.concat(' ' + loadedLastName);
@@ -685,10 +688,10 @@ function updateInfo(loadedTitle,loadedDescription,loadedPublishDate,loadedEventD
        valueInputOption: "USER_ENTERED",
        resource:  {
                   values: [ [loadedTitle,loadedDescription,loadedPublishDate,loadedEventDate,
-                    loadedLastDateOfRegistration,loadedEntryFees,loadedCataegory,loadedUserId,loadedFullName,"P",a]]
+                    loadedLastDateOfRegistration,loadedEntryFees,loadedCataegory,loadedUserId,loadedFullName,"A",a]]
                 }
      }).then(function(response) {
-
+         document.getElementById("loadingDiv").style = "display:none;";
        window.top.location.reload();
        var range = response.result;
        if (range.values.length > 0) {
