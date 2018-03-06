@@ -2,7 +2,7 @@
 <script>
  if(/iPhone|iPad|iPod/i.test(navigator.userAgent))
 {
-	
+
 	alert("IOS");
 }else {
   alert('Not Allowed');
@@ -26,7 +26,12 @@ if(signedUp == 'true' )
 
 
 }else{
-  window.location.href = "/signin";
+  if(localStorage.getItem("getStartedCompleted") == 'true')
+  {
+    window.location.href = "/signin";
+  }else {
+    window.location.href = "/getStarted.html";
+  }
 }
 
 
