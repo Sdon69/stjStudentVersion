@@ -668,7 +668,7 @@ else{
                            rangeImported =  "Class Data!".concat("A" + ++a + ":K");
            }
 
-             alert('Updating');
+            
             updateInfo(loadedTitle,loadedDescription,loadedPublishDate,loadedEventDate,loadedLastDateOfRegistration,loadedEntryFees,
               loadedCataegory,loadedUserId,loadedFullName,a,rangeImported);
 
@@ -691,7 +691,7 @@ function updateInfo(loadedTitle,loadedDescription,loadedPublishDate,loadedEventD
        valueInputOption: "USER_ENTERED",
        resource:  {
                   values: [ [loadedTitle,loadedDescription,loadedPublishDate,loadedEventDate,
-                    loadedLastDateOfRegistration,loadedEntryFees,loadedCataegory,loadedUserId,loadedFullName,"A",a]]
+                    loadedLastDateOfRegistration,loadedEntryFees,loadedCataegory,loadedUserId,loadedFullName,"P",a]]
                 }
      }).then(function(response) {
          document.getElementById("loadingDiv").style = "display:none;";

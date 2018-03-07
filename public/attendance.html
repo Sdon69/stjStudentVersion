@@ -72,7 +72,7 @@ input:focus ~ label, input:valid ~ label 		{
 }
 
 /* BOTTOM BARS ================================= */
-.bar 	{ position:relative; display:block; width:20%; }
+.bar 	{ position:relative; display:block; width:auto; }
 .bar:before, .bar:after 	{
   content:'';
   height:2px;
@@ -142,8 +142,8 @@ input:focus ~ .highlight {
         <form method="post" action="/signInWriteCheck" name='event'>
 
          <div class="group" align="center">
-           <span style="color:#3f8acd; font-size:24; font-weight:500;">IGC</span><br>
-        <input type='text' placeholder=" I G C"   name='igc' style="text-align:center; width:20%;">
+           <!-- <span style="color:#3f8acd; font-size:24; font-weight:500;">IGC</span><br> -->
+        <input type='text' placeholder="I G C"   name='igc' style=" width:auto; text-align:center;">
         <span class="highlight"></span>
         <span class="bar"></span>
     </div>
@@ -168,7 +168,7 @@ function go()
 
     if(igc.length < 1)
   {
-    alert('Type IGC');
+    alert('Enter the IGC');
   }
   else
   {
@@ -236,10 +236,10 @@ function go()
   function updateSigninStatus(isSignedIn) {
     if (isSignedIn) {
       authorizeButton.style.display = 'none';
-      signoutButton.style.display = 'block';
+      signoutButton.style.display = 'none';
       // listMajors();
     } else {
-      authorizeButton.style.display = 'block';
+      authorizeButton.style.display = 'none';
       signoutButton.style.display = 'none';
     }
   }
