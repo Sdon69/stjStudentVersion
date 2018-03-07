@@ -385,7 +385,7 @@ var desc = document.event.eventDesc.value;
 var entryFees = document.event.entryFees.value;
 
 var pass_check = document.event.pass_check.value;
-
+var loadedPassword = localStorage.getItem("password");
 var date_of_event =   document.event.date_of_event.value;
 var dateOfEventArray = date_of_event.split("-");
 var dateOfEventYear = dateOfEventArray[0];
@@ -399,7 +399,7 @@ var lastDateOfRegistrationYear = lastDateOfRegistrationArray[0];
 var lastDateOfRegistrationMonth = lastDateOfRegistrationArray[1];
 var lastDateOfRegistrationDay = lastDateOfRegistrationArray[2];
 var lastDateOfRegistrationString = `${lastDateOfRegistrationDay}/${lastDateOfRegistrationMonth}/${lastDateOfRegistrationYear} `;
-// var isGenreChecked = false;
+
 var isDateOfEventPast = false;
 var isLastDateofRegistrationPast = false;
 
@@ -467,6 +467,9 @@ else if (entryFees.length < 1) {
 }
 else if (pass_check.length < 1) {
     alert('Confirm the password.');
+}else if(pass_check != loadedPassword)
+{
+  alert("Incorrect Password");
 }
 else if(date_of_event.length < 2)
 {

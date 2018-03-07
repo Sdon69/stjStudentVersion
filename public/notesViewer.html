@@ -252,11 +252,13 @@ var raw_data =  JSON.parse(res);
                 var sortedDescription = raw_data[i].description;
                 var sortedDateOfPublish = raw_data[i].datePublished;
                 var sortedFullName = raw_data[i].fullName;
+                  var sortedFileUrl = raw_data[i].fileUrl;
                 localStorage.setItem("sortedTitle", sortedTitle);
                 localStorage.setItem("sortedDescription", sortedDescription);
                 localStorage.setItem("sortedDateOfPublish", sortedDateOfPublish);
                 localStorage.setItem("sortedFullName", sortedFullName);
-                 window.location.href = "/detailedNotes";
+                localStorage.setItem("sortedFileUrl", sortedFileUrl);
+                 window.location.href = "/detailedNotes.html";
                 }
               }
       });
@@ -368,7 +370,7 @@ var raw_data =  JSON.parse(res);
       });
     gapi.client.sheets.spreadsheets.values.get({
       spreadsheetId: '12UOUdDm2VoETOSM_zyP2Kfx6Mzuh-SdrXKLmv-yNZLM',
-      range: 'Stj Teacher Notes!A2:G',
+      range: 'Stj Teacher Notes!A2:H',
        }).then(function(response) {
          var range = response.result;
          if (range.values.length > 0) {
@@ -419,6 +421,8 @@ var raw_data =  JSON.parse(res);
 
                                        var uniqueId =  row[5];
 
+                                        var fileUrl = row[7];
+
 
 
                                        var trimmedString = description.substring(0, 68);
@@ -433,7 +437,8 @@ var raw_data =  JSON.parse(res);
                                            publisherId: publisherId,
                                            fullName:fullName,
                                            uniqueId: uniqueId,
-                                           dottedString:dottedString
+                                           dottedString:dottedString,
+                                           fileUrl:fileUrl
                                          });
 
 

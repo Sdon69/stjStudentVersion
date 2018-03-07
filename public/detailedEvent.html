@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<style>
+td
+{
+	padding-top:10px;
+}
+body{
+	background: #ffffff;
+}
+
+</style>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<font face="Roboto">
+<div style="padding-right:3%;padding-left:3%;margin-top:5%">
+<div align="center" ><font color="#3f8acd" size="6"><span id="title"></span></font>
+<br>
+<table style="color:#8497b0">
+<tr><td >Date of Publication</td><td style="padding-left:5px" id="dateOfPublish"></td></tr>
+<tr><td >Date of Event</td><td style="padding-left:5px" id="eventDate"></td></tr>
+<tr><td >Last Date of Registration</td><td style="padding-left:5px" id="lastDateofRegistration"></td></tr>
+</table>
+</div>
+<br>
+<div align="right" style="color:#2f5597; size:auto"  ><b>Entry Fees:<span id="entryFees"></span></b></div>
+<font size="3">
+<p align="left" style="line-height: 200%;" id="description">
+</p>
+</div>
+</font>
+
+</div>
+</font>
+</body>
+<script>
+
+
+var sortedTitle = localStorage.getItem("sortedTitle")
+var sortedDescription =localStorage.getItem("sortedDescription")
+var sortedDateOfPublish = localStorage.getItem("sortedDateOfPublish")
+var sortedEventDate = localStorage.getItem("sortedEventDate")
+var sortedLastDateofRegistration = localStorage.getItem("sortedLastDateofRegistration")
+var sortedEntryFees = localStorage.getItem("sortedEntryFees")
+
+ document.getElementById("title").innerHTML = sortedTitle;
+ document.getElementById("description").innerHTML = sortedDescription;
+ document.getElementById("dateOfPublish").innerHTML = sortedDateOfPublish;
+ document.getElementById("eventDate").innerHTML = sortedEventDate;
+ document.getElementById("lastDateofRegistration").innerHTML = sortedLastDateofRegistration;
+ document.getElementById("entryFees").innerHTML = sortedEntryFees;
+
+</script>
+</html>

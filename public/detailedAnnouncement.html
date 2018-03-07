@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<style>
+td
+{
+	padding-top:10px;
+}
+body{
+	background: #ffffff;
+}
+
+</style>
+<meta charset="utf-8">
+
+</head>
+
+<body>
+<font face="Roboto">
+
+<div style="padding-right:3%;padding-left:3%;margin-top:5%;">
+<div align="center"><font color="#3f8acd" size="6"><span id = 'title'></span></font>
+<br>
+
+</div>
+<br>
+<div align="right" style="color:#2f5597; size:auto;background: #ffffff;" ><b><span id = 'datePublished'></span></b></div>
+<font size="3">
+<p align="left" id='description' style="line-height: 200%;">
+</p>
+	<span id="attachmentUrl"></span><br>
+<iframe src="https://docs.google.com/viewer?srcid=1pzoKRWFu5telSSst0SkOHtLvkzKzXUyU&pid=explorer&efh=false&a=v&chrome=false&embedded=true" width="580px" height="480px" id="attachmentFrame"></iframe>
+</div>
+</font>
+
+
+</font>
+</body>
+<script>
+
+
+var sortedTitle = localStorage.getItem("sortedTitle");
+var sortedDescription =localStorage.getItem("sortedDescription");
+var sortedDateOfPublish =localStorage.getItem("sortedDateOfPublish");
+var sortedFullName =localStorage.getItem("sortedFullName");
+var sortedFileUrl = localStorage.getItem("sortedFileUrl");
+
+if(sortedFileUrl !='None')
+{
+	var trimmedFileId =sortedFileUrl.substring(sortedFileUrl.lastIndexOf("/d/")+3,sortedFileUrl.lastIndexOf("vi")-1);
+	var sourceString = "https://docs.google.com/viewer?srcid=fileid&pid=explorer&efh=false&a=v&chrome=false&embedded=true" ;
+	var generatedSrc = sourceString.replace('fileid', trimmedFileId);
+	document.getElementById("attachmentFrame").src = generatedSrc;
+	 document.getElementById("attachmentUrl").innerHTML = "Attachments :";
+}else {
+	document.getElementById("attachmentFrame").style = "display:none;";
+	 document.getElementById("attachmentUrl").innerHTML = "Attachments : None";
+}
+ document.getElementById("title").innerHTML = sortedTitle;
+ document.getElementById("description").innerHTML = sortedDescription;
+ document.getElementById("datePublished").innerHTML = sortedDateOfPublish;
+
+
+</script>
+</html>
