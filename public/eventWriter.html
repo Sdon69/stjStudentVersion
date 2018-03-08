@@ -239,17 +239,17 @@ padding:0;
 
 <div class="form-style-2">
     <div class="group">
-          <input type='text' placeholder="Event Title" name='eventTitle'  id="mySelect"   required>
+          <input type='text' placeholder="Event Title" name='eventTitle'  id="mySelect"    maxlength="40"  required>
       <span class="highlight"></span>
       <span class="bar"></span>
 
       </div>
     <div class="group">
-          <textarea name='eventDesc'  id="mySelect" placeholder="Event Description..." ></textarea> <span class="highlight"></span>
+          <textarea name='eventDesc'  id="mySelect" placeholder="Event Description..."   maxlength="49000" ></textarea> <span class="highlight"></span>
       <span class="tbar"></span>
 
       </div>    <div class="group">
-          <input type='number' placeholder="Entry Fees" name='entryFees'  id="mySelect">  <span class="highlight"></span>
+          <input type='number' placeholder="Entry Fees" name='entryFees'  id="mySelect"   maxlength="5" >  <span class="highlight"></span>
       <span class="bar"></span>
 
       </div>
@@ -668,7 +668,7 @@ else{
                            rangeImported =  "Class Data!".concat("A" + ++a + ":K");
            }
 
-            
+
             updateInfo(loadedTitle,loadedDescription,loadedPublishDate,loadedEventDate,loadedLastDateOfRegistration,loadedEntryFees,
               loadedCataegory,loadedUserId,loadedFullName,a,rangeImported);
 
