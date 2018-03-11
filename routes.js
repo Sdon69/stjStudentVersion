@@ -246,7 +246,7 @@ router.get('/attendance', function(req, res, next) {
 
 
 router.get('/editProfile', function(req, res, next) {
-    console.
+    
 
 
 
