@@ -106,22 +106,22 @@ var cataegory2;
    cataegory1 = 'All Departments';
    cataegory2 = 'All Semesters';
  }else if (mode === 'sectionViewer') {
-   sheetId = '1fzxyzBACml4GPghMpplfziKPgtgfYUQYwqwVXye7usI';
+   sheetId = '1nzKRlq7cQrI_XiJGxJdNax5oB91bR_SypiazWO2JTuU';
    range = 'Sections!A2:S';
  }else if (mode === 'classViewer') {
-   sheetId = '1fzxyzBACml4GPghMpplfziKPgtgfYUQYwqwVXye7usI';
+   sheetId = '1nzKRlq7cQrI_XiJGxJdNax5oB91bR_SypiazWO2JTuU';
    range = 'Class Name!A2:S';
  }else if (mode === 'subjectViewer') {
-   sheetId = '1fzxyzBACml4GPghMpplfziKPgtgfYUQYwqwVXye7usI';
+   sheetId = '1nzKRlq7cQrI_XiJGxJdNax5oB91bR_SypiazWO2JTuU';
    range = 'Subjects!A2:S';
  }else if (mode === 'userIdFeed') {
-   sheetId = '1On0zu6-x0qgv32KjKm4JvdtN5yYArSDfeJ4fndJvbFU';
+   sheetId = '1qtzLH2JKOURnvIrc3Q-mlCfQLHtfNbUmZnAiRGJWHBM';
    range = 'Class Data!A2:S';
  }else if (mode === 'userIdDetailedFeed') {
-   sheetId = '1On0zu6-x0qgv32KjKm4JvdtN5yYArSDfeJ4fndJvbFU';
+   sheetId = '1qtzLH2JKOURnvIrc3Q-mlCfQLHtfNbUmZnAiRGJWHBM';
    range = 'Class Data!A2:S';
  }else if (mode === 'passwordCheck') {
-   sheetId = '1On0zu6-x0qgv32KjKm4JvdtN5yYArSDfeJ4fndJvbFU';
+   sheetId = '1qtzLH2JKOURnvIrc3Q-mlCfQLHtfNbUmZnAiRGJWHBM';
    range = 'Class Data!A2:S';
  }
 
@@ -153,7 +153,7 @@ var cataegory2;
   if(mode === 'userIdWriter')
   {
 
-    sheetId = '1On0zu6-x0qgv32KjKm4JvdtN5yYArSDfeJ4fndJvbFU';
+    sheetId = '1qtzLH2JKOURnvIrc3Q-mlCfQLHtfNbUmZnAiRGJWHBM';
     range = 'Class Data!A2:J';
 
   }
@@ -161,7 +161,7 @@ var cataegory2;
   if(mode === 'userIdEditor')
   {
 
-    sheetId = '1On0zu6-x0qgv32KjKm4JvdtN5yYArSDfeJ4fndJvbFU';
+    sheetId = '1qtzLH2JKOURnvIrc3Q-mlCfQLHtfNbUmZnAiRGJWHBM';
     range = 'Class Data!A2:J';
 
   }
@@ -230,7 +230,7 @@ var cataegory2;
                 if(mode === 'userIdWriter')
                 {
 
-                  sheetId = '1On0zu6-x0qgv32KjKm4JvdtN5yYArSDfeJ4fndJvbFU';
+                  sheetId = '1qtzLH2JKOURnvIrc3Q-mlCfQLHtfNbUmZnAiRGJWHBM';
                   range = 'Class Data!A2:J';
                   inputRes = {
                                 values: [ [gSignupUserId,gPassword,gFirstName,gLastName,gClassName,gSection,gEmailAddress,gPhoneNo,'d',gSemester],['0']]
@@ -240,7 +240,7 @@ var cataegory2;
                 if(mode === 'userIdEditor')
                 {
 
-                  sheetId = '1On0zu6-x0qgv32KjKm4JvdtN5yYArSDfeJ4fndJvbFU';
+                  sheetId = '1qtzLH2JKOURnvIrc3Q-mlCfQLHtfNbUmZnAiRGJWHBM';
                   range = 'Class Data!A2:J';
                   inputRes = {
                                 values: [ [gSignupUserId,gPassword,gFirstName,gLastName,gClassName,gSection,gEmailAddress,gPhoneNo,'d',gSemester]]

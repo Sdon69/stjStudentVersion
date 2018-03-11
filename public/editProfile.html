@@ -744,7 +744,7 @@ var semesterString;
     if (isSignedIn) {
       authorizeButton.style.display = 'none';
       signoutButton.style.display = 'none';
-        listMisc('className','Class Name!A2:G','1fzxyzBACml4GPghMpplfziKPgtgfYUQYwqwVXye7usI');
+        listMisc('className','Class Name!A2:G','1nzKRlq7cQrI_XiJGxJdNax5oB91bR_SypiazWO2JTuU');
     } else {
       authorizeButton.style.display = 'none';
       signoutButton.style.display = 'none';
@@ -902,20 +902,20 @@ var semesterString;
               {
 
                 //repeats the function but with now mode= sectionName
-                listMisc('sectionName','Sections!A2:G','1fzxyzBACml4GPghMpplfziKPgtgfYUQYwqwVXye7usI');
+                listMisc('sectionName','Sections!A2:G','1nzKRlq7cQrI_XiJGxJdNax5oB91bR_SypiazWO2JTuU');
 
               }
 
              else if(mode == 'sectionName')
               {
                  //repeats the function again but with now mode= subjectName
-                   listMisc('subjectName','Subjects!A2:G','1fzxyzBACml4GPghMpplfziKPgtgfYUQYwqwVXye7usI');
+                   listMisc('subjectName','Subjects!A2:G','1nzKRlq7cQrI_XiJGxJdNax5oB91bR_SypiazWO2JTuU');
 
 
               }
               else if(mode == 'subjectName')
               {
-                listMisc('userName','Class Data!A2:J','1On0zu6-x0qgv32KjKm4JvdtN5yYArSDfeJ4fndJvbFU');
+                listMisc('userName','Class Data!A2:J','1qtzLH2JKOURnvIrc3Q-mlCfQLHtfNbUmZnAiRGJWHBM');
 
 
 
@@ -993,7 +993,7 @@ var semesterString;
          loadedSection =      localStorage.getItem("transferSection")
     var a = 2;
     gapi.client.sheets.spreadsheets.values.get({
-      spreadsheetId: '1On0zu6-x0qgv32KjKm4JvdtN5yYArSDfeJ4fndJvbFU',
+      spreadsheetId: '1qtzLH2JKOURnvIrc3Q-mlCfQLHtfNbUmZnAiRGJWHBM',
       range: 'Class Data!A2:F',
        }).then(function(response) {
          var range = response.result;
@@ -1035,7 +1035,7 @@ function updateInfo(importedUserId,importedPassword,importedFirstName,importedLa
   rangeImported)
 {
      gapi.client.sheets.spreadsheets.values.update({
-       spreadsheetId: '1On0zu6-x0qgv32KjKm4JvdtN5yYArSDfeJ4fndJvbFU',
+       spreadsheetId: '1qtzLH2JKOURnvIrc3Q-mlCfQLHtfNbUmZnAiRGJWHBM',
        range: rangeImported,
        valueInputOption: "USER_ENTERED",
        resource:  {

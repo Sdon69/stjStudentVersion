@@ -16,290 +16,541 @@
   License for the specific language governing permissions and limitations under
   the License.
 -->
+<style>
+
+::placeholder {
+    color: #4489c8;
+    opacity: 1; /* Firefox */
+}
+
+* { box-sizing:border-box; }
+
+/* basic stylings ------------------------------------------ */
+body 				 { background:url(https://scotch.io/wp-content/uploads/2014/07/61.jpg); }
+
+h2 		 {
+  text-align:center;
+  margin-bottom:50px;
+}
+h2 small {
+  font-weight:normal;
+  color:#888;
+  display:block;
+}
+.footer 	{ text-align:center; }
+.footer a  { color:#53B2C8; }
+
+/* form starting stylings ------------------------------- */
+.group 			  {
+  position:relative;
+  margin-bottom:45px;
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  width:100%;
+  border:none;
+  border-bottom:1px solid #757575;
+
+  font-weight:450;
+  color:#4489c8;
+
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#999;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#3f8acd;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:100%; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#3f8acd;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100%;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#3f8acd; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#3f8acd; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#3f8acd; }
+  to 	{ width:0; background:transparent; }
+}
 
 
-    <style>
+textarea 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  width:100%;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+textarea:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#999;
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+textarea:focus ~ label, textarea:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#3f8acd;
+}
+
+/* BOTTOM BARS ================================= */
+.tbar 	{ position:relative; display:block; width:100%; }
+.tbar:before, .tbar:after 	{
+  content:'';
+  height:5px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#3f8acd;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.tbar:before {
+  left:50%;
+}
+.tbar:after {
+  right:50%;
+}
+
+/* active state */
+textarea:focus ~ .tbar:before, textarea:focus ~ .tbar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:100%;
 
 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
 
-    .float{
-      position:fixed;
-      width:60px;
-      height:60px;
-      bottom:100px;
-      right:40px;
-      background-color:#3f8acd;
-        border-radius:50px;
-      text-align:center;
-      box-shadow: 2px 2px 3px #999;
+/* active state */
+textarea:focus ~ .highlight {
+  -webkit-animation:textareaHighlighter 0.3s ease;
+  -moz-animation:textareaHighlighter 0.3s ease;
+  animation:textareaHighlighter 0.3s ease;
+}
 
-    }
+/* ANIMATIONS ================ */
+@-webkit-keyframes textareaHighlighter {
+	from { background:#3f8acd; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes textareaHighlighter {
+	from { background:#3f8acd; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes textareaHighlighter {
+	from { background:#3f8acd; }
+  to 	{ width:0; background:transparent; }
+}
 
-    .my-float{
-    	margin-top:22px;
-    }
-
-    html, body {height:100%; overflow:hidden}
+html, body {height:100%; overflow:hidden}
 body {
-  overflow:auto; -webkit-overflow-scrolling:touch;margin:0;
+overflow:auto; -webkit-overflow-scrolling:touch;margin:0;
 padding:0;
 }
-
-    </style>
-
-
-
-    <button id="authorize-button" style="display: none;">Authorize</button>
-    <button id="signout-button" style="display: none;">Sign Out</button>
-<div id="loadingDiv" style="position:fixed; height:100%; width:100%; background:#80141516; display:block;"><div style="position:fixed; width:20%; top:50%; left:40%; background:#ffffff;"><table ><tr><td><img src="loading.gif"></td><td> Loading...</td></tr></table></div>
+</style>
+<button id="authorize-button" style="display: none;">Authorize</button>
+<button id="signout-button" style="display: none;">Sign Out</button>
+<div id="loadingDiv" style="position:fixed; height:100%; width:100%; background:#80141516; display:none;"><div style="position:fixed; width:20%; top:50%; left:40%; background:#ffffff;"><table ><tr><td><img src="loading.gif"></td><td> Loading...</td></tr></table></div>
 </div>
-  <!-- Show spreadsheets -->
-<div style="width:100%; background-color:#3f8acd; ">
-        <form>
-        <table width="100%"><tr><td width="48%"><tr><td>
-          <select  name ="s1" id="cataegory1" style="background:#3f8acd; border:none; color:#ECE7E7; margin-left:2%;  width:100%;-webkit-appearance: none; background:url(15xvbd5.png) no-repeat right ;">
+<font face="roboto">
+<div style="background:#ffffff; padding:20px;">
 
-                   <option style="font-weight:bold;">All Departments</option>
-             <option style="font-weight:bold;">Art</option>
-             <option style="font-weight:bold;">Commerce</option>
-             <option style="font-weight:bold;">Management</option>
-             <option style="font-weight:bold;">Education</option>
-             <option style="font-weight:bold;">Science</option>
-             <option style="font-weight:bold;">Other</option>
-                   </select>
-
-</td>
+        <form method="post" action="/announcementWriteCheck" name='event'>
 
 
-        <br>
-        <td width="52%"  rowspan="2"  >
-        <input id='hangoutButtonId'    type="button" value="button" name="s3"  style="visibility: collapse;" onclick="submitClick()" >
+          <div class="form-style-2">
+              <div class="group">
+                    <input type='text' placeholder="Title" name='eventTitle'  id="mySelect"   maxlength="80"   required>
+                <span class="highlight"></span>
+                <span class="bar"></span>
 
-        <button type="button"  value='filter' onClick="checkInfo()" style="padding:5%; padding-right:20%;
-        padding-left:20%; background-color:rgba(236,230,230,0.65); border:none; color:rgba(255,255,255,1.00);
-        font-size:12px; box-shadow:rgba(0,0,0,1.00); font-weight:600;  " >FILTER</button>
-      </td></tr><tr> <td>
-            <select name ="s2"  id="cataegory2"  style="background:#3f8acd; border:none; color:#ECE7E7; margin-left:2%;  width:100%;-webkit-appearance: none; background:url(15xvbd5.png) no-repeat right ;">
+                </div>
+              <div class="group">
+                    <textarea name='eventDesc'  id="mySelect" placeholder="Details"  maxlength="49000"  ></textarea> <span class="highlight"></span>
+                <span class="tbar"></span>
 
-                <option style="font-weight:bold;">All Semesters</option>
-  <option style="font-weight:bold;">First Semester</option>
-  <option style="font-weight:bold;">Second Semester</option>
-  <option style="font-weight:bold;">Third Semester</option>
-  <option style="font-weight:bold;">Fourth Semester</option>
-  <option style="font-weight:bold;">Fifth Semester</option>
-  <option style="font-weight:bold;">Sixth and Above Semesters</option>
-                </select></td></tr></td></tr></table>
+                </div>
+                    <div class="group">
+                    <input type='password' placeholder="Confirm Password" name='pass_check'  id="mySelect">  <span class="highlight"></span>
+                <span class="bar"></span>
 
+                </div>
+    <br> <font color="#3f8acd">
+    <b>
+    Department(s) Concerned:<br><br>
+    <input type="checkbox" name="department0" value="Art"  style="width:auto;" id="mySelect">Art<br><br>
+    <input type="checkbox" name="department1" value="Commerce"  style="width:auto;" id="mySelect">Commerce<br><br>
+    <input type="checkbox" name="department2" value="Management" style="width:auto;" id="mySelect">Management<br><br>
+    <input type="checkbox" name="department3" value="Education" style="width:auto;" id="mySelect">Education<br><br>
+    <input type="checkbox" name="department4" value="Science" style="width:auto;" id="mySelect">Science<br><br>
+    <input type="checkbox" name="department5" value="Other" style="width:auto;" id="mySelect">Other<br><br>
+
+    <br>
+
+
+    Semesters(s) Concerned:<br><br>
+    <input type="checkbox" name="semester0" value="First Semester" style="width:auto;" id="mySelect">First Semester<br><br>
+    <input type="checkbox" name="semester1" value="Second Semester" style="width:auto;"style="width:auto;"  id="mySelect">Second Semester<br><br>
+    <input type="checkbox" name="semester2" value="Third Semester"  style="width:auto;" id="mySelect">Third Semester<br><br>
+    <input type="checkbox" name="semester3" value="Fourth Semester" style="width:auto;" id="mySelect">Fourth Semester<br><br>
+    <input type="checkbox" name="semester4" value="Fifth Semester" style="width:auto;" id="mySelect">Fifth Semester<br><br>
+    <input type="checkbox" name="semester5" value="Sixth and Above Semesters" style="width:auto;" id="mySelect">Sixth and Above Semesters<br><br>
+
+
+    <iframe id="iframe" src="https://script.google.com/macros/s/AKfycbx0EPMPMoik0bHwgCfcK-fovnXnPjknk8KNZrRx3Mw5HB6oKyLu/exec"  name="search_iframe"   style="width:100%; height:20%;  border:none; overflow:hidden; z-index:1;"></iframe>
+
+
+    <script>
+           window.addEventListener( "message",
+             function (e) {
+
+                   if(e.origin !== 'https://n-zimj7dfcsfobgmntvmso4vfagfhs23aii7gtbnq-0lu-script.googleusercontent.com'){ return; }
+                    if(e.data.includes('http'))
+                    {
+
+                     localStorage.setItem("loadedUrl", e.data);
+                   }else {
+
+                     localStorage.setItem("status",e.data);
+                   }
+             },
+             false);
+       </script>
+
+
+    <br>
+
+      <input type='text' name='cataegoryTextName' value='false'  id='cataegoryStringText'  style="visibility:collapse;" >
+  <input type='text' name='todayTextName' value='false'  id='todayDateText'   style="visibility:collapse;" >
+<input type="button" value="SUBMIT"  onclick="check()" style="background: linear-gradient(0deg, #15446e, #408bce); color:#FFFFFF;"    >
+
+            <input type="submit" value="Submit" id='hangoutButtonId'  style="visibility:collapse;"   >
+          </div>
         </form>
+        <br><br>
+      <span class="mdl-list__item-secondary-action" style="position:relative; ">
+
+        <button  class="mdl-button mdl-js-button mdl-button--raised
+                       mdl-js-ripple-effect mdl-button--colored"
+                rel="writeAnnouncement" type="button" id='create'  style="position:relative; visibility:collapse;">Create</button>
 
 
-
-        <span class="mdl-list__item-secondary-action">
-
-          <button  class="mdl-button mdl-js-button mdl-button--raised
-                         mdl-js-ripple-effect mdl-button--colored"
-                  rel="createAnnouncements" type="button" id='create' onclick="f()"
-                   style="visibility: collapse; "  >Create</button>
-</span>
 
 </div>
-<div id="myDiv" style="height:100%,width:100%;">        </div>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/json2html/1.0.0/json2html.min.js"></script>
-
+</font>
 <script>
-var gCataegory1;
-var gCataegory2;
-
-var viewerData;
-function saveToViewerData()
+var isSemesterChecked;
+var isDepartmentChecked;
+var cataegoryString = 'All Departments All Semesters';
+function concatCataegoryString()
 {
-  viewerData =  localStorage.getItem("viewerData");
-  localStorage.removeItem("viewerData");
-}
 
-  function checkInfo()
+             var semester = ['1'];
+             semester.pop('1');
+
+  if(document.event.semester0.checked)
   {
-    var skillsSelect = document.getElementById("cataegory1");
-    var cataegory1 = skillsSelect.options[skillsSelect.selectedIndex].text;
-    gCataegory1 = cataegory1;
-    var skillsSelect2 = document.getElementById("cataegory2");
-    var cataegory2 = skillsSelect2.options[skillsSelect2.selectedIndex].text;
-    gCataegory2 = cataegory2;
+     semester.push(document.event.semester0.value);
+  isSemesterChecked = true;
+  }
+  if(document.event.semester1.checked)
+  {
+     semester.push(document.event.semester1.value);
+  isSemesterChecked = true;
+  }
+  if(document.event.semester2.checked)
+  {
+    semester.push(document.event.semester2.value);
+  isSemesterChecked = true;
+  }
+  if(document.event.semester3.checked)
+  {
+    semester.push(document.event.semester3.value);
+  isSemesterChecked = true;
+  }
+  if(document.event.semester4.checked)
+  {
+    semester.push(document.event.semester4.value);
+  isSemesterChecked = true;
+  }
+  if(document.event.semester5.checked)
+  {
+    semester.push(document.event.semester5.value);
+  isSemesterChecked = true;
+  }
 
-    if(cataegory1.includes('Choose'))
+
+
+
+  var semesterString = 'All Semesters'.concat(semester);
+
+  var department = ['1'];
+  department.pop('1');
+
+
+
+  if(document.event.department0.checked)
+  {
+      department.push(document.event.department0.value);
+isDepartmentChecked = true;
+  }
+  if(document.event.department1.checked)
+  {
+      department.push(document.event.department1.value);
+isDepartmentChecked = true;
+  }
+  if(document.event.department2.checked)
+  {
+      department.push(document.event.department2.value);
+isDepartmentChecked = true;
+  }
+  if(document.event.department3.checked)
+  {
+      department.push(document.event.department3.value);
+isDepartmentChecked = true;
+  }
+  if(document.event.department4.checked)
+  {
+      department.push(document.event.department4.value);
+isDepartmentChecked = true;
+  }
+  if(document.event.department5.checked)
+  {
+      department.push(document.event.department5.value);
+isDepartmentChecked = true;
+  }
+
+
+
+
+
+
+    if(!department)
     {
-      alert('Choose a Department');
-  }else if (cataegory2.includes('Choose')) {
-      alert('Choose a Semester');
+      // alert('Choose Atleast one Department');
+    }
+    else if(1<department.length){
+    for(i=0;i<=department.length - 1;i++)
+    {
+      cataegoryString = cataegoryString.concat(department[i]);
+    }
+    }else {
+      cataegoryString = cataegoryString.concat(department);
+    }
+
+  if(!semester)
+  {
+    // alert('Choose Atleast one Semester');
   }
-  else {
+  else if(1<semester.length){
+  for(i=0;i<=semester.length - 1;i++)
+  {
+    cataegoryString = cataegoryString.concat(semester[i]);
+  }
+  }else {
+    cataegoryString = cataegoryString.concat(semester);
+  }
 
 
-    // document.getElementById('create').click();
-    // document.getElementById('hangoutButtonId').click();
-submitClick();
-  }
 
-  }
-function submitClick()
+
+
+}
+
+
+
+function check()
 {
 
 
 
 
+var title = document.event.eventTitle.value;
+
+var desc = document.event.eventDesc.value;
+
+
+
+var pass_check = document.event.pass_check.value;
+
+var loadedPassword = localStorage.getItem("password");
+
+
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth()+1; //January is 0!
+
+  var yyyy = today.getFullYear();
+  if(dd<10){
+  dd='0'+dd;
+  }
+  if(mm<10){
+  mm='0'+mm;
+  }
+  var today = dd+'/'+mm+'/'+yyyy;
 
 
 
 
-  var departmentFilter = gCataegory1;
-  var semesterFilter = gCataegory2;
+concatCataegoryString();
 
 
 
 
-var res = viewerData.replace(/&quot;/g, '"');
-var raw_data =  JSON.parse(res);
 
 
 
-          var forLength = raw_data.length - 1;
-
-      var i;
-       var used = false;
-       var anyNoteFromDept = false;
-
-       var filteredData = [{
-       name: 'str1',
-       age:   'str2'
-       }];
-         for(i=0;i<=forLength;i++)
-         {
-         var dept = raw_data[i].cataegories;
 
 
-           if(dept.includes(departmentFilter))
-           {
-
-             if(dept.includes(semesterFilter))
+if(title.length < 1)
 {
 
-             if(!used)
-             {
-             filteredData.pop({
-             name: 'str1',
-             age:   'str2'
-               });
-               filteredData.push(raw_data[i]);
-               used = true;
-               anyNoteFromDept = true;
 
-             }else{
-               filteredData.push(raw_data[i]);
-               anyNoteFromDept = true;
-             }
+  alert('Enter the Event Title.');
+}
+else if (desc.length < 1) {
+    alert('Enter the Event Description.');
+}
+else if (pass_check.length < 1) {
+    alert('Confirm the password.');
+} else if(pass_check != loadedPassword)
+{
+  alert("Incorrect Password")
+}
+
+
+
+
+
+
+else if (!isDepartmentChecked) {
+  alert('Choose Atleast one Department')
+}
+
+else if (!isSemesterChecked) {
+  alert('Choose Atleast one Semester');
+
+}
+else{
+
+   document.getElementById('cataegoryStringText').value = cataegoryString;
+   document.getElementById('todayDateText').value = today;
+
+
+   localStorage.setItem("loadedCataegory", cataegoryString);
+   localStorage.setItem("loadedPublishDate", today);
+     localStorage.setItem("loadedTitle", title);
+   localStorage.setItem("loadedDescription", desc);
+
+    if(localStorage.getItem("status"))
+    {
+      if(localStorage.getItem("loadedUrl"))
+      {
+
+        listMajors();
+      }else {
+        alert('Upload In Progress... ');
+      }
+    }else {
+      listMajors();
+    }
+
+}
+
+
+
+
+
 
 
 }
-           }
-         }
-
-         if(!anyNoteFromDept)
-         {
-           filteredData.pop({
-           name: 'str1',
-           age:   'str2'
-             });
-             filteredData.push({
-             title: 'No Data for this filter Exists'
-               });
-         }
-         var globalFilteredData = filteredData;
 
 
 
-
-             var t = {'<>':"div style='width:100%;padding-top:20px;'",'html':[
-
-                                     {'<>':"button id='1' name='1' value='${uniqueId}'  style='background:#fff;color:#3f8acd;width:100%; border-right:#000000;border-left:#ffffff;border-top:#000000;border-top:#ffffff; -webkit-appearance: none; ' ",'html':[
-                                       {'<>':"font face='Roboto'",'html':[
-                                           {'<>':"div style='width:100%; padding-bottom:10px; margin-right:20px; background:#ffffff;'",'children':[
-                                     {
-                                       '<>':"div style='width:100%'",'children':[
-                                         {
-                                        '<>':"table style='width:100%'",'children':[
-                                             {
-                                                 '<>':"tr",'children':[
-                                                   {
-                                                   '<>':"td style='margin-bottom:3px; color:#3f8acd;font-size:14px; font-weight:600; padding-top:25px;text-align:left;'",'html':"${title}"
-                                                   },
-                                                   {
-                                                     '<>':"td style='margin-right:25px;padding-top:6px;font-size:8px; font-weight:450; color:#848587; padding-right:15px;' align='right'",'html':"${datePublished}"
-                                                   }
-                                                 ]
-                                             }
-                                           ]
-                                         }
-                                       ]
-                                     },{
-                                         '<>':"div style='margin-left:6px;  margin-top:4px; margin-bottom:4px;  font-size:10px ; font-weight:600;'",'children':[
-                                           {
-                                             '<>':"table style='width:100%'",'children':[
-                                               {
-                                                   '<>':"tr",'children':[
-                                                     {
-                                           '<>':"td style='align-content:flex-start; font-size:10px;font-weight:450;text-align: left; color:#000000;'",'html':"Author : ${fullName}"
-                                                     }
-                                                   ]
-                                               }
-                                             ]
-                                           }
-                                         ]
-                                     },{
-                                         '<>':"div style='font-size:12px; font-weight:450; padding-top:5px;text-align: left;color:#000000;'",'html':"${dottedString}"
-                                     }
-                                 ]}  ] }]}]};
-
-
-  var d = filteredData;
-
-  var transformedHtml =  json2html.transform(d,t) ;
-  // document.write(transformedHtml);
-
-  document.getElementById("myDiv").innerHTML=transformedHtml;
-
-  $(function(){
-      $("button").click(function() {
-          var fired_button = $(this).val();
-          derivedUniqueIdNumber = fired_button;
-              for(i=0;i<=forLength;i++)
-              {
-              var uniqueId = raw_data[i].uniqueId;
-                if(derivedUniqueIdNumber === uniqueId)
-                {
-                var sortedTitle = raw_data[i].title;
-                var sortedDescription = raw_data[i].description;
-                var sortedDateOfPublish = raw_data[i].datePublished;
-                var sortedFullName = raw_data[i].fullName;
-                var sortedFileUrl = raw_data[i].fileUrl;
-                localStorage.setItem("sortedTitle", sortedTitle);
-                localStorage.setItem("sortedDescription", sortedDescription);
-                localStorage.setItem("sortedDateOfPublish", sortedDateOfPublish);
-                localStorage.setItem("sortedFullName", sortedFullName);
-                localStorage.setItem("sortedFileUrl", sortedFileUrl);
-                 window.location.href = "/detailedAnnouncement.html";
-                }
-              }
-      });
-  });
-
-
-}
 
 </script>
-
 
 <script type="text/javascript">
 
@@ -354,7 +605,7 @@ var raw_data =  JSON.parse(res);
     if (isSignedIn) {
       authorizeButton.style.display = 'none';
       signoutButton.style.display = 'none';
-      listMajors();
+      // listMajors();
     } else {
       authorizeButton.style.display = 'none';
       signoutButton.style.display = 'none';
@@ -395,16 +646,25 @@ var raw_data =  JSON.parse(res);
 
   function listMajors() {
     document.getElementById("loadingDiv").style = "position:fixed; height:100%; width:100%; background:#80141516; display:block;" ;
-    var itemDetails = [{
-           title: 'str1',
-           age:   'str2'
-         }];
-    itemDetails.pop({
-    title: 'str1',
-    age:   'str2'
-      });
+    var loadedFirstName = localStorage.getItem("firstName");
+    var loadedLastName = localStorage.getItem("lastname");
+    var loadedFullName = loadedFirstName.concat(' ' + loadedLastName);
+    var loadedUserId = localStorage.getItem("userId");
+    var loadedCataegory = localStorage.getItem("loadedCataegory")
+    var loadedPublishDate = localStorage.getItem("loadedPublishDate")
+    var loadedTitle = localStorage.getItem("loadedTitle")
+    var loadedDescription = localStorage.getItem("loadedDescription")
+    var loadedUrl =  localStorage.getItem("loadedUrl");
+    if(!loadedUrl)
+    {
+      loadedUrl = 'None'
+    }
+
+    localStorage.removeItem('loadedUrl');
+    localStorage.removeItem('status');
+    var a = 2;
     gapi.client.sheets.spreadsheets.values.get({
-      spreadsheetId: '1i6Kd38Z-NaO747Wi_DG9bxHH1LCMPzbCiDAIUbBxzYs',
+      spreadsheetId: '116OBhXliG69OB5bKRAEwpmlOz21LCCWStniSuIR6wPI',
       range: 'Stj Teacher Notes!A2:H',
        }).then(function(response) {
          var range = response.result;
@@ -413,97 +673,53 @@ var raw_data =  JSON.parse(res);
              var row = range.values[i];
              // Print columns A and E, which correspond to indices 0 and 4.
 
+                           var Str1 = row[0];
+
+                           if (Str1.includes("BonBlank88"))
+                           {
+                             break;
+                           }
 
 
-               var str1 = row[0];
-
-
-
-
-                                 if (str1.includes("BonBlank88"))
-                                 {
-
-                                     end = true;
-
-                                     continue;
-                                 }
-
-
-
-
-
-
-
-
-                                 // dept_filter = 'Debate';
-
-
-                                       cataegories = row[2];
-
-
-
-
-
-                                       var title = row[0];
-
-                                       var description =  row[1];
-
-                                      var publisherId =  row[3];
-
-                                       var fullName =  row[4];
-
-
-
-                                       var uniqueId =  row[5];
-
-                                       var datePublished =  row[6];
-
-                                       var fileUrl = row[7];
-
-
-                                       var trimmedString = description.substring(0, 68);
-                                       var dottedString = trimmedString.concat('....')
-
-
-
-                                         itemDetails.push({
-                                           title: title,
-                                           description:  description,
-                                           cataegories: cataegories,
-                                           publisherId: publisherId,
-                                           fullName:fullName,
-                                           uniqueId: uniqueId,
-                                           datePublished:datePublished,
-                                           dottedString:dottedString,
-                                           fileUrl:fileUrl
-                                         });
-
-
-
-
-
-
-
-
-
-
-
-
+                           rangeImported =  "Stj Teacher Notes!".concat("A" + ++a + ":H");
            }
 
 
-            var viewerData =  JSON.stringify(itemDetails);
+            updateInfo(loadedTitle,loadedDescription,loadedCataegory,loadedUserId,loadedFullName,a,loadedPublishDate,loadedUrl,rangeImported);
 
-        localStorage.setItem("viewerData", viewerData);
-                saveToViewerData();
-                  document.getElementById("loadingDiv").style = "display:none;";
-                  checkInfo()
+
          } else {
-             alert('No data found.');
+           alert('No data found.');
          }
        }, function(response) {
          alert('Error: ' + response.result.error.message);
        });
+
+
+}
+function updateInfo(loadedTitle,loadedDescription,loadedCataegory,loadedUserId,loadedFullName,a,loadedPublishDate,loadedUrl,rangeImported)
+{
+     gapi.client.sheets.spreadsheets.values.update({
+       spreadsheetId: '116OBhXliG69OB5bKRAEwpmlOz21LCCWStniSuIR6wPI',
+       range: rangeImported,
+       valueInputOption: "USER_ENTERED",
+       resource:  {
+                  values: [ [loadedTitle,loadedDescription,loadedCataegory,loadedUserId,loadedFullName,a,loadedPublishDate,loadedUrl]]
+                }
+     }).then(function(response) {
+    document.getElementById("loadingDiv").style = "display:none;";
+       window.top.location.reload();
+       var range = response.result;
+       if (range.values.length > 0) {
+
+
+       } else {
+         document.write('No data found.');
+       }
+     }, function(response) {
+       document.write('Error: ' + response.result.error.message);
+     });
+
 
 
 }

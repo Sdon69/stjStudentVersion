@@ -47,8 +47,7 @@ padding:0;
 
     </style>
 
-    <a href="/eventWriterPage">
-    <img src="bluePlus.jpg" class="float"></a>
+
 
 
         <button id="authorize-button" style="display: none;">Authorize</button>
@@ -431,8 +430,8 @@ document.getElementById("myDiv").innerHTML=transformedHtml;
     age:   'str2'
       });
     gapi.client.sheets.spreadsheets.values.get({
-      spreadsheetId: '1_lodhrWpyuJSvJRi4MNyw8k7W7hSBKrXS7ukBVE4cI0',
-      range: 'Class Data!A2:K',
+      spreadsheetId: '1SC0UPYthsoS5NKDuC5oJt-y29__f0gm0wkIkJoDduWw',
+      range: 'Events!A2:K',
        }).then(function(response) {
          var range = response.result;
          if (range.values.length > 0) {

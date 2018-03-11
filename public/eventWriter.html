@@ -239,17 +239,17 @@ padding:0;
 
 <div class="form-style-2">
     <div class="group">
-          <input type='text' placeholder="Event Title" name='eventTitle'  id="mySelect"    maxlength="40"  required>
+          <input type='text' placeholder="Event Title" name='eventTitle'  id="mySelect"   maxlength="80"   required>
       <span class="highlight"></span>
       <span class="bar"></span>
 
       </div>
     <div class="group">
-          <textarea name='eventDesc'  id="mySelect" placeholder="Event Description..."   maxlength="49000" ></textarea> <span class="highlight"></span>
+          <textarea name='eventDesc'  id="mySelect" placeholder="Event Description..."  maxlength="49000"  ></textarea> <span class="highlight"></span>
       <span class="tbar"></span>
 
       </div>    <div class="group">
-          <input type='number' placeholder="Entry Fees" name='entryFees'  id="mySelect"   maxlength="5" >  <span class="highlight"></span>
+          <input type='number' placeholder="Entry Fees" name='entryFees'  id="mySelect">  <span class="highlight"></span>
       <span class="bar"></span>
 
       </div>
@@ -648,8 +648,8 @@ else{
     var loadedLastDateOfRegistration = localStorage.getItem("loadedLastDateOfRegistration");
     var a = 2;
     gapi.client.sheets.spreadsheets.values.get({
-      spreadsheetId: '1_lodhrWpyuJSvJRi4MNyw8k7W7hSBKrXS7ukBVE4cI0',
-      range: 'Class Data!A2:K',
+      spreadsheetId: '1SC0UPYthsoS5NKDuC5oJt-y29__f0gm0wkIkJoDduWw',
+      range: 'Events!A2:K',
        }).then(function(response) {
          var range = response.result;
          if (range.values.length > 0) {
@@ -665,10 +665,10 @@ else{
                            }
 
 
-                           rangeImported =  "Class Data!".concat("A" + ++a + ":K");
+                           rangeImported =  "Events!".concat("A" + ++a + ":K");
            }
 
-
+             alert('Updating');
             updateInfo(loadedTitle,loadedDescription,loadedPublishDate,loadedEventDate,loadedLastDateOfRegistration,loadedEntryFees,
               loadedCataegory,loadedUserId,loadedFullName,a,rangeImported);
 
@@ -686,7 +686,7 @@ function updateInfo(loadedTitle,loadedDescription,loadedPublishDate,loadedEventD
   loadedCataegory,loadedUserId,loadedFullName,a,rangeImported)
 {
      gapi.client.sheets.spreadsheets.values.update({
-       spreadsheetId: '1_lodhrWpyuJSvJRi4MNyw8k7W7hSBKrXS7ukBVE4cI0',
+       spreadsheetId: '1SC0UPYthsoS5NKDuC5oJt-y29__f0gm0wkIkJoDduWw',
        range: rangeImported,
        valueInputOption: "USER_ENTERED",
        resource:  {
